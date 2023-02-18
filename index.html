@@ -392,13 +392,56 @@
 
     <!-- Modal window -->
 
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
         <div class="modal">
             <button class="modal-btn" type="button" data-modal-close>
-                <svg class="modal-icon" width="8" height="8">
+                <svg class="modal-icon-close" width="8" height="8">
                   <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
+
+            <strong class="modal-moto">Leave your contacts and we will call you back</strong>
+
+            <form class="modal-form" name="modal_form">
+
+                <label class="modal-form-lable" for="user-name">Name</label>
+                <div class="modal-form-field">
+                    <input type="text" name="user_name" id="user-name">
+                    <svg class="modal-icon" width="12" height="12">
+                      <use href="./images/icons.svg#icon_user_name"></use>
+                    </svg>
+                </div>
+
+                <label class="modal-form-lable" for="user-tel">Phone</label>
+                <div class="modal-form-field">
+                    <input type="tel" name="user_tel" id="user-tel">
+                    <svg class="modal-icon" width="13" height="13">
+                      <use href="./images/icons.svg#icon_phone"></use>
+                    </svg>
+                </div>
+
+                <label class="modal-form-lable" for="user-email">Email</label>
+                <div class="modal-form-field">
+                    <input type="email" name="user_email" id="user-email">
+                    <svg class="modal-icon" width="15" height="12">
+                      <use href="./images/icons.svg#icon_email"></use>
+                    </svg>
+                </div>
+
+                <label for="user_comment" class="modal-form-lable">Comment</label>
+                <textarea class="modal-user-comment" 
+                    id="user_comment"
+                    name="modal_comment" 
+                    rows="6"
+                    placeholder="Please type your comment"
+                ></textarea>
+                
+                <label class="modal-form-agreement">
+                    <input class="checkbox-agreement" type="checkbox" name="user_agreement">
+                    <span>I accept the terms and conditions of the <a href="#">Privacy Policy</a></span>
+                </label>
+                    
+            </form>
         </div>
     </div>
 
