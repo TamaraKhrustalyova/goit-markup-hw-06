@@ -15,6 +15,7 @@
 
     /* Transition properties */
     --trns: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    --trans-slow: 250ms ubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Base styles */
@@ -486,7 +487,7 @@ body {
 .footer-txt {
     margin-top: 16px;
 }
-.footer-media {
+.footer-title {
     font-weight: 500;
     margin-bottom: 16px;
 }
@@ -512,6 +513,58 @@ body {
 .footer-socials-link:hover,
 .footer-socials-link:focus {
     background-color: #31D0AA;
+}
+
+.footer-right {
+    margin-right: 80px;
+}
+
+.footer-title {
+    margin-bottom: 16px;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: end;
+}
+
+.email-field {
+    width: 264px;
+    height: 40px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-right: 24px;
+    font-size: 12px;
+    padding-left: 16px;
+    color: #FFFFFF;
+}
+
+.email-field:focus {
+    outline: transparent;
+}
+
+.footer-btn {
+    display: flex;
+    width: 165px;
+    height: 40px;
+    background-color: var(--accent-txt-cl);
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    align-items: center;
+    padding: 8px 24px;
+    font-weight: 500;
+    transition: background-color var(--trans-slow);
+} 
+
+.footer-btn:focus,
+.footer-btn:hover {
+    background-color: var(--accent-bg-cl);
+}
+
+.icon-plane {
+    margin-left: 16px;
 }
 
 /* Modal window */
@@ -555,7 +608,7 @@ body {
    
 }
 
-.modal-btn {
+.modal-close-btn {
     position: absolute;
     top: 24px;
     right: 24px;
@@ -569,6 +622,13 @@ body {
     background-color: #E7E9FC;
 }
 
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: var(--accent-bg-cl);
+    fill:#FFFFFF;
+    
+}
+
 .modal-moto {
     display: block;
     text-align: center;
@@ -577,31 +637,114 @@ body {
 }
 
 .modal-form-lable {
-    
+    display: block;
     font-size: 12px;
     margin-bottom: 4px;
+    
+}
+.modal-form-group {
+    position: relative;
+    margin-bottom: 8px;
+    
 }
 .modal-form-field {
-    position: relative;
     display: block;
     width: 100%;
     height: 40px;
-    border: 1px solid var(--accent-txt-cl);
+    padding-left: 38px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    margin-bottom: 8px;
-    
-
+    outline: transparent;
+    transition: border-color var(--trns);
 }
+
+.modal-form-field:focus,
+.modal-form-field:focus-visible {
+    border-color: var(--accent-txt-cl);
+}
+
 .modal-icon {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
+    transform: translateY(-50%);
+    margin-left: 16px;
+    transition: fill var(--trns) 100ms;
 }
-.modal-form-lable {
+
+.modal-form-field:focus,
+.modal-form-field:focus-visible + .modal-icon {
+    fill: var(--accent-txt-cl);
 }
+
 .modal-user-comment {
+    display: block;
+    width: 100%;
+    resize: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    outline: transparent;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    transition: border-color var(--trans-slow);
 }
+
+.modal-user-comment:focus,
+.modal-user-comment:focus-visible {
+    border-color: var(--accent-txt-cl);
+}
+
+.modal-user-comment::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
 .modal-form-agreement {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 24px;
 }
-.checkbox-agreement {
+
+.custom-checkbox {
+    display: block;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    margin-right: 8px;
+    background-image: url(../images/icons/icon-cheked.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: background-color var(--trans-slow);
+}
+
+.custom-checkbox:checked {
+    background-color: var(--accent-bg-cl);
+    border: none;
+}
+
+.modal-send-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 159px;
+    background: var(--accent-txt-cl);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: calc(24 / 16);
+    color: var(--white-txt-cl);
+    padding: 16px 32px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color var(--trans-slow);
+} 
+
+.modal-send-btn:focus,
+.modal-send-btn:hover {
+    background-color: var(--accent-bg-cl);
 }
