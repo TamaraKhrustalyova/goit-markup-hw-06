@@ -555,16 +555,13 @@ body {
     align-items: center;
     padding: 8px 24px;
     font-weight: 500;
+    gap: 16px;
     transition: background-color var(--trans-slow);
 } 
 
 .footer-btn:focus,
 .footer-btn:hover {
     background-color: var(--accent-bg-cl);
-}
-
-.icon-plane {
-    margin-left: 16px;
 }
 
 /* Modal window */
@@ -604,8 +601,7 @@ body {
 
 .backdrop.is-hidden .modal {
     transform: scale(0.5);
-    opacity: 0.25; 
-   
+    opacity: 0.25;   
 }
 
 .modal-close-btn {
@@ -626,7 +622,6 @@ body {
 .modal-close-btn:focus {
     background-color: var(--accent-bg-cl);
     fill:#FFFFFF;
-    
 }
 
 .modal-moto {
@@ -640,8 +635,8 @@ body {
     display: block;
     font-size: 12px;
     margin-bottom: 4px;
-    
 }
+
 .modal-form-group {
     position: relative;
     margin-bottom: 8px;
